@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>False_9!</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="false_9.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+</head>
+
+<body style="background-color: black;">
+  <!--navbar-->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid " style="background-color: black;">
+      <a class="navbar-brand" href="#">
+        <img src="data:image/png;base64,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"
+          alt="logo" width="80"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#Home" style="color: beige;"> <i class="fa-solid fa-futbol fa-bounce" style="font-size: 20px;"></i> &nbsp Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#todays's kicks" style="color: beige;"><i class="fa-regular fa-star fa-spin" style="color: #ffffff;"></i>&nbspTODAY'S "KICKS"!</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#trending" style="color: beige;"><i class="fa-solid fa-fire fa-fade" style="color: #ff4d00;"></i>&nbspTRENDING</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#transfer window" style="color: beige;"><i class="fa-solid fa-money-bill-transfer fa-fade" style="color: #3dff9b;"></i>&nbspTransfer Window</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#it's just the goat" style="color: beige;"><i class="fa-solid fa-crown fa-fade" style="color: #f5ee24;"></i>&nbspIt's just THE G.O.A.T.</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#support us!" style="color: beige;"><i class="fa-solid fa-info" style="color: #f6f7f9;"></i>&nbspSupport Us!</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact us!" style="color: beige;"><i class="fa-solid fa-phone fa-shake" style="color: #ffffff;"></i>&nbspContact Us!</a>
+          </li>
+          <form class="d-flex" role="search " style="margin-left: 150px;">
+            <input class="form-control me-2" type="search" placeholder="Looking For Something Else..."
+              aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">SHOOT!</button>
+          </form>
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <!--carousel-->
+  <div style="background-color: rgb(61, 60, 60);">
+    <div style="height: 75%;width: 75%; margin-left: auto;margin-right: auto; background-color: rgb(12, 10, 10);">
+      <div id="carouselExampleDark" class="carousel carousel-dark slide"></div>
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-inner " style="color:rgb(5, 5, 5);">
+          <div class="carousel-item active">
+            <img
+              src="https://cdn.vox-cdn.com/thumbor/P8rkXk_0f4VA_rHi0YWqqhS82ZY=/0x0:3701x2322/1200x800/filters:focal(1441x280:2033x872)/cdn.vox-cdn.com/uploads/chorus_image/image/72438867/1491732076.0.jpg"
+              class="d-block w-100" alt="logo">
+            <div class="carousel-caption d-none d-md-block" style="color: black;">
+              <h5>Today's "KICKS"!</h5>
+              <p>REPORT: Harry Kane could be offered £400k/wk to stay at Spurs.</p>
+            </div>
+          </div>
+          <div class="carousel-item " style="color: beige;">
+            <img src="https://static.toiimg.com/photo/101509579.cms" class="d-block w-100" alt="logo">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>TRENDING !</h5>
+              <p>SAFF Championship Final: Gurpreet emerges as India’s hero in penalty shootout thriller against Kuwait
+                India claims its second title in a month after edging Kuwait in sudden-death; the regulation time ends
+                1-1 as Chhangte’s 38th-minute goal cancels out Alkhaldi’s strike.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://library.sportingnews.com/styles/crop_style_16_9_mobile_2x/s3/2023-07/lionel%20messi%20presentation%20071623.jpg?h=920929c4&itok=FDDpkHhU"
+              class="d-block w-100" alt="logo">
+
+
+            <div class="carousel-caption d-none d-md-block" style="color: rgb(12, 12, 12);">
+              <h5>It's just THE G.O.A.T !</h5>
+              <p>On Monday, Messi took a break from his vacation with wife Antonela Roccuzzo to commemorate the two-year
+                anniversary of winning that Copa America. That triumph was Messi's first international trophy at the
+                senior level and broke a streak of 28 years without a trophy for Argentina.</p>
+            </div>
+          </div>
+
+
+
+          <div class="carousel-item">
+            <img src="https://cloudfront-us-east-2.images.arcpublishing.com/reuters/CSJITUKKD5PLJE627CR6CGUGAY.jpg"
+              class="d-block w-100 h-50" alt="logo">
+            <div class="carousel-caption d-none d-md-block" style="color: beige;">
+              <h5>Transfer Window!</h5>
+              <p>David de Gea to leave Manchester United after 12 years, sends emotional farewell message to fans</p>
+            </div>
+          </div>
+
+
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
+    </div>
+
+  </div>
+  <br>
+
+
+
+
+
+
+  <h2 id="Dig-ins!" class="fs-2 p-5 mb-5 text-center text-bg-dark"><i class="fa-regular fa-eye" style="color: #ffffff;"></i>&nbspDIG-INS!</h2>
+  <div style="background-color: dimgray;">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col">
+
+        <div class="card"></div>
+        <div class="card" style="background-color: black;" >
+          <img src="https://a2.espncdn.com/combiner/i?img=%2Fphoto%2F2022%2F0814%2Fr1048195_1296x729_16%2D9.jpg"
+            class="card-img-top" alt="logo">
+          <div class="card-body">
+            <h5 class="card-title" style="color: beige;">It's over between MAN-U and David De Gea</h5>
+            <p class="card-text" style="color: beige;">David De Gea has left Manchester United after failing to agree
+              terms on a new contract. The Spanish goalkeeper leaves Old Trafford as a free agent after 12 seasons at
+              the club. De Gea revealed his exit on social media, writing: "I just wanted to send this farewell message
+              to all Manchester United supporters.</p>
+            <a href="#" class="btn btn-primary">Go to "Trending!"</a>
+            <div class="spinner-grow text-success" role="status">
+              <span class="visually-hidden">NEW</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col">
+        <div class="card" style="background-color: black;">
+          <iframe width="100%" height="400" src="https://www.youtube.com/embed/wstYxsa57Fo?autoplay=1&mute=1" title="YouTube video player"></iframe>
+          
+          <div class="card-body" style="color: beige;">
+            <h5 class="card-title">Andre Onana Deal!</h5>
+            <p class="card-text">Andre Onana's move from Inter Milan to Manchester United is at an advanced stage,
+              according to sources close to the Cameroon goalkeeper. It's understood that a deal in the region of
+              £43million plus add-ons is set to be completed this week once Onana has agreed personal terms.</p>
+            <br>
+            <a href="#" class="btn btn-primary">Go to "Transfer Window!"</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="background-color: black;">
+          
+          <div class="card-body" style="color:beige;">
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/qihGTDMIeV0?autoplay=1&mute=1" title="YouTube video player"></iframe>
+            <h5 class="card-title">MESSI TO MIAMI!</h5>
+            <p class="card-text">World Cup winner Lionel Messi’s unveiling for MLS club Inter Miami has become the most watched unveiling in football history, Inter Miami owner David Beckham revealed. 
+
+              </p>
+            <a href="#" class="btn btn-primary">Read More!</a>
+            <div class="spinner-grow text-success" role="status">
+              <span class="visually-hidden">NEW</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="background-color: black;">
+          <img
+            src="https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt1d105996c1f24209/63e663187432ea74fe3f9793/GettyImages-1246773018.jpg?auto=webp&format=pjpg&width=3840&quality=60"
+            class="card-img-top" alt="logo">
+          <div class="card-body" style="color: beige;">
+            <h5 class="card-title">How Life Can Change In 4 Years...! </h5>
+            <p class="card-text">Barcelona agree €40 million deal for Brazilian starlet Vitor Roque in first signing of
+              summer window - but official announcement depends on THREE more exits!The Bluagrana have been among the
+              front-runners for Roque for a while.</p>
+            <a href="#" class="btn btn-primary">Go to "Trending!"</a>
+            <div class="spinner-grow text-success" role="status">
+              <span class="visually-hidden">NEW</span><br><br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <h2 id=">Eye Worthies!" class="fs-2 p-5 mb-5 text-center text-bg-dark"><i class="fa-solid fa-newspaper"></i>&nbspEye Worthies!</h2>
+    <div style="background-color: dimgray;">
+
+
+
+      <div class="card-group">
+        <div class="card" style="background-color:black;">
+          <iframe width="100%" height="400" src="https://www.youtube.com/embed/vMAOU69shQQ?autoplay=1&mute=1" title="YouTube video player"></iframe>
+          <div class="card-body">
+            <h5 class="card-title" style="color: beige">Trending!</h5>
+            <p class="card-text" style="color: beige">Argentina goalkeeper Emiliano Martinez mesmerised football fans in
+              Kolkata during his two-day visit to the city. Martinez was more than happy to acknowledge the chants of
+              his illustrious Argentina teammate Lionel Messi that came his way at various points of his visit, even
+              promising to return to the city with the legendary Albiceleste captain and the rest of the team to play
+              there.</p>
+            <a href="#" class="btn btn-primary">Go to "Trending!"</a>
+            <div class="spinner-grow text-success" role="status">
+              <span class="visually-hidden">NEW</span>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="background-color:black;">
+          <img
+            src="https://www.livemint.com/lm-img/img/2023/07/04/1600x900/FILES-FBL-NEYMAR-MANSION-0_1688433889772_1688433901061.jpg"
+            class="card-img-top" alt="logo">
+          <div class="card-body">
+            <h5 class="card-title" style="color: beige;">Today's "KICKS"!</h5>
+            <p class="card-text" style="color: beige;">Brazilian football star Neymar has been fined $3.3 million! Find
+              why.</p>
+            <a href="#" class="btn btn-primary">Go to "Today's "KICKS"!"</a>
+          </div>
+        </div>
+        <div class="card" style="background-color: black;">
+          <img
+            src="https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/bltb29d74ac2dbb312a/64ac5b8385ca63420efb7448/GettyImages-1258592923.jpg?auto=webp&format=pjpg&width=1200&quality=60"
+            class="card-img-top" alt="logo">
+          <div class="card-body">
+            <h5 class="card-title" style="color: beige">Transfer Window!</h5>
+            <p class="card-text" style="color: beige">'He needs to go to my office' - Romelu Lukaku to defy Mauricio
+              Pochettino & ignore his order to return to Chelsea pre-season training as Inter transfer target seeks exit
+            </p>
+            <a href="#" class="btn btn-primary">Go to "Transfer Window!"</a>
+          </div>
+        </div>
+        <div class="card" style="background-color: black;">
+          <iframe width="100%" height="400" src="https://www.youtube.com/embed/18EMo-acPPc?autoplay=1&mute=1" title="YouTube video player"></iframe>
+          <div class="card-body">
+            <h5 class="card-title" style="color: beige">Transfer Window!</h5>
+            <p class="card-text" style="color: beige">'Preparing for Lionel Messi's Inter Miami debut, David Beckham
+              gave finishing touches to a mural of the Argentine captain.</p>
+            <a href="#" class="btn btn-primary">Go to "It's just THE G.O.A.T!"</a>
+
+            <h6<span class="badge bg-secondary" style="color: rgb(13, 14, 13);">New </span></h6>
+              <span class="visually-hidden">NEW!</span>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+  <!-- Footer -->
+
+
+  <footer class="bg-dark text-center text-white"><br><br>
+    <style>
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 5px;
+      }
+    </style>
+    </head>
+
+    <body>
+
+
+      <img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAgVBMVEUBAQEAAAD////8/PwFBQX5+fnv7+8rKysJCQnX19fGxsb09PS1tbWUlJT29vZDQ0OdnZ07Ozvh4eG9vb3q6uqwsLCNjY1tbW2qqqrNzc0yMjJfX1+goKB9fX2JiYnm5uYeHh4TExNHR0dSUlJycnJlZWUoKCgbGxtPT09/f39ZWVkNwW8pAAATJElEQVR4nO1ciULjug6NsjXpkq50X2kp0P//wGcdyYm78eCSDhkm6jCUxE19LGu1bM+r6RcQ6c+vfVNTTX8BVURaajmsqaZfTRXRB7WmqemfpopISy2HNdX0q6ki+qDWNDX901QRaanlsKaafjVVRB/Umqamf5oqIi21HNZU06+miuiDWtNUltxRDC9vhnTV5q+k8AqZc+9PdODnJeGvl0O6T+beRxyuMKHvXyL5zF8jksyYMOGONya9dtoKoiBSCpiigkbNp/HplZvyZ6zuqT5xV4lOvUEW+L5vMPm3SW4Eo9l7nwTlIxCWL+LcUTq+zzLGFnwAUCByEz8eLgzTvYQqrmlEliikY2/j+xEQcv99waq/8zemhe/LX+Zf+sKffEi/SiNmnhEnonWs7PMv2XeLnSyZeJMueKZ+aEB/mihMzATdDyzzmF2bWfNpujTUW057TSDpdXpL0HQ4S+OcoUYhtbdmiJKye+WVJn4EDdOJRL9EgT9qjt8arlFYA6F7ZTdf9NLMXIx4pvqDiVqaSsqhGf6QXoe+sQmYdelK0YUy78zdDhDu+EoIkyJ28205siIadKi6skjMwY1RH8wOf7YoWJEjFB4afYILkDlWvIbeWTUB4xPPhuoh5D4ZI9+NVagGJyiNi47SWBE6CMj6dWO2Ljw6w4SMOHsVQylT63kkijHq7ehWBwuEF9chwP0mtE3EEMs0/eUINNRDfyAOzOZFJxpdNnZ56NwCIAOrozambcenQpoGCI2VYM9zMLe65arVXR6q2plAFCO/hyGq1DRlQz+EAxbNEpht70Z8ew8htBTszR7OeeRPoG4rBNGYenqH7xXMdpihNzt3H6HOKuOux7AamTH9pXXOK2G6G1DdEZy0QYOS+43vyKH7HJmofpMnQoXk0HS5iSgh69MHs+sjHkoDdmrZZff9Q6n69HsEazZhSxYEK2PK7vuVt+zheYNE5Nm8NtvKAGS/xIMe9YOhpiRuEMJG8WmS+3yGkxezT2v06ZXH8EOEgGkCd2TU/6BLlPulJs79QE+G9M6i6I+2JdmLb2saMCRFcNDJtcNVYw9+6djGFuGtNrYdzeD6jTU39eOahnkzh3YYHCU5yKateLh8n8REwsN+SEU27uxRknQzM4LHa0D3rM6fJWRlplCkqzzqc+RM2Up0XM5shN9qHrSV4/yETgpyxnGGfyKvCtk3RrgboO+bkVBzzh5AcZ8zi91h5NusBv8Xd7a4k+QQeKT2q8PK0GSKdlMqJb9YghzSPs/CwGT4zYR5aI24Abjrxchq+E46anAwtiEMneck00gfBFUTbCSO/HE5NA/qSWKwSKx1yZmlITXMrIuiPAvF3qt5BUtyXHR2Z4IsCGx+jl/9iiT9WfcJAzPNpVmEUIYmLt5cZk01p/hE7kgYPaQfjzSNvCrPOf0W0XxT5A0RGRiEACi5qfkId82/2Xi/9RqnacrtWJcMHSZB09oUXYDBGlYigjIw3iKGNRsyNcGfrogCIqBdaqaoudqaznNVu2iqMC6LTH6O0PIx8NOkDFX6bU1j5AfmfkJi8SKLkCTPNBW5k8wNzCWbw/cWXw6ihU5EEoRR0Fq9TCYTDIG/OVL47Tx/CUNkvE2OKvawgktk84WHiGm7zD7D4bmaP47m2Xy8tDJEW0UgJTxsCaeXGJd+NQIMRhUEcQP2uQeR6+YzDx5Y5Kc7gqfDTJQ8Gr1IMn/N0ooBF4+n1cVz1hDcfRXwma49cW/YUVbDkSM0PH2G3oi6Km+F5iB1UlOi5AIhP2eFdalFGQi/b/EZoe+PkEB0EcIZeILy6MnaYPEp/jNJoYL3FHq5HApC88cE9mdRQnq/hCFShN4VDw3AV6zSxK+UnMdLkNkD+DTN2esifAlyhD9OFiFdz1Kit4xBtMl1QOUWL1NBn6a2rKaQQ5FSv6RZ+n3KEXpAGLgIV5C1w3XoD/0yhADPqdCluRxahJWAeB+hBvWt5xsdDUXxGiY+i0l8GMJvaxoHIZ0hZGcA5j4+KgfdTzHCdzaeCAPPNc05wh/XNB/w0N7a3uKhmaUrOGmnB/Pw20QXCP0LhDCVVx9i14adIf8GQq+KCIM7ulQcse4tHoqLl7vpZwiNUwcVVQ05dKzFlcWHyQv8d7r+LuZhk6V0pO51gTBUhBWz+HF4zUOPnrGwO7z+Kpj8iDXNzK4VnvFwol5bZWbpFUL0zPo02Y4uB5QdmRXCwGnlEbI6CcQv9TjOYBNnsxhi8nhR99KnMeh3GxQ12GTMmdDSKmJDUg2fhmAhbFyH9w7CrmQl9k5+kSmUwTA8TMnlYeDHfVt5Yz72VkaipgSLD6WfnXbb7TbsaYwP5RF6CXtmJiTedG1GBnMQ9SVBxiswB0mKkkXYmuwNvXFMErX69P0eljBErDANis2AaRQ5s5QDxD7LUxSk8zwjg++mdZBxADzgBbUitggwOQ1FWZ7F+HlCJsrmCZHLNY6o3GGF2fORKm0ttBJY8jQdSR5He7H93NiExJJwDSQzZ8KOpBLZRKLGRvOcmrePmId6zyNdSfL94SkvZlsNtPVaMhrSuOOmxJnapWSEvy+HmhH2bcLbZ21RRPTUGKDLmZ+lnclivzgMRzYtOj2T54Odob6+ec9r3H5SDgkT0bclzeDN0sllmwHoD6K82pSVS4C1OACkXfEc2rXtZNeC035Fct4hvaE/m6bQcH1WsW0M4W7mazobLy1p9zuESF+aYSn5tB6P10xcdWq0UFVqamgn2Ri3brToGJYFuctBpJMzkEWqsSyT5u0ceuEByaZVQYgggfs9vqsYiObTUeQXAH0sYt9ubSLHGSb96cP1/k/TtzUNz8g+ZGuQm69LWWcD0X9vjjJZReSFl/FFfrForOVtPEm9amT1E48rFVg5rItip7MWpIWyu/1iqBzskFy6asqzNbWVCtUgdFVCgbihw37RQjQuA1qLjvE7ujZKV88yzd556S2Kj6xJK6FMMe5m2DNZD7xXeUmoNgnQ+/Gd4kqEIK+xatqS0H3f4uPXRLTIOyDebixumaikJLzOvqFNQjQUKWzQnef8cTnE40JUlxp1Y4z0nbo2A1CsBZuJO0ufzNoVzwbEHJWYoULswvRbUmGhy2iXAkayzMh6BgCvey+rw7TA+nfQpGqEFZZI1lk4xpht6bK+l7BPYZ1P0ds9D1F4c8pQj5FVb++lgdTmrSQG4pEuty6JkoFjnnXu1S6GvDy1aKFcP5qUuP+pBE2j1XuUyiyEjnAtNRYw1NnuIJ1xUx+YJ7xkDI/XG2VhuDqaRhK88xEmWBDvRVdKF60W5ZjIGPokSa6/GCkP04orcsxUb2PEqiaH3KdujA5GCJ9CNdjcVUzRSA194lYcitnHnr75THcUNS+K/ypBqgj7G9QlZNiDJjVdjGgslURGBrnK2YEnm38xxZNOzFYiClpNKndXUCly6AkjQhPPC8QoaJ4EY4IpqrFH4oXul1JeXrN9H9gts23ahbed8p+VQ88TWTw2eeMMUhrp+xaMHWvoOya6UrGw8TTvbGBKjJrJUNQQ3pDVnydeq+ct6j0NAM0ra67nuaF/p9v0vEQJdYCf+MVAvuUPVIJUFqk7sBkz/p1p7mYw7l3T02xkczs+50/bshG8GqsV9wiCN5Ldkvle53wz8zVp1TC3np0eokLL0zTW9BsmzHm3um+zu77aimt0tmiTixfT1c5uCSuvPw8hwXjspGdQzitoXf4JxOZENqqHlShe/5hItyNQd5leArnmIUR1tt6S7nij6gNkQh9ZYzRees10MIpbmaGWS3whizfprL3u7shNsJYOsFw5PH8DtZi8Nub92zQ/7mx2FVssH9KNR5EIlU2y3SeRvL9iZl6QHDijCbXrqJ/EKcfvfLf+j3T0G5Qf//BBE21X/FHTf6FHappKvKmppv9MX44g/nPI8WNC8vVv977S+Ofl8M/x8POPp9tXyDtboL5ocXn13KPxrMt2jSB/fN7s9reUBfCm8wU3hEJNJuk1u+Tn+GuOv8LLZ7gezvsN9dq4NuwSej4A8hw8adeYI/GT3Fm/+x4Z/6o3SM9pmZd2hTSRS5zRt2NifpZ8bTAtElCaVz2uZ60syuLm+xGrNBipbXpJLxgdDweInaYbjkg208WXz5H6pNRic8R5cDcj5HaRwh9qjdPBHryDfIt8pEnFiiIWJyYDzcz4/mYckuSIia7CxwlZHj4PI183J0bDOZKSpWuakNqX8XnT5t0NFilSwyKw/YDpRFsR5mvVmO1rG/QjfcinvYCHFPhneYBAEZpxnMRy2JmkCkYnekCykSzCIrnEtc0ih1zti1In8/V5qoXjCYvQkRtd8g+0u4Y1oz4lFmGREmAoE5JvnmD4JCeAA3oWj1E27eLrz3jIAjfTRAxnRfM60gJhYc1CeuXsaIS8FNbRgqbUqDBCFF0WXHwhOfmmJUMBDmMBb/OlcrDPySFZhK10oLSZao09ymmCSHowI5W6M4T5kVhkWThqd4YbXpBq7kiPU5C6v0FBL1C2pAUqs8Pz2yGVyqonCj/d+a/ysF3YBXtUZaIVCDLwffqAh+baEpMz4j14r9MIZwlpmXeQq5cz2mfg2xJ/vA6xlT96fcA81e4OXXOl9pBSnOvYhiz2PkToEbYwq36lNQNMvGKWBrrPLbfrXGuLbLEkDeg48LV2+nEI1X6H+WI9nTCN0iNUTZroJp87PMRCcTST7Kj1V7wC4cR6SpoB0eLVlZ042BjgP12tpJeIkBLLQLv3cwq29PicITPAJ8pl7hphSE0ojeygBRnOdnyLUBYuNDXMp8BxneIehlY3aeDMuk8nVr+oaYpZKjxkbwpnCWYn2cbER0Hc1zRS6syS+PSmD7EARZc6chgiR3yO0OMdfVAHnvfJNcYv8/A4F+qHVuAmUG+p0QkQxM1OXMo7crhXU2hm6kHPrnNmqZmO8gWN+Vw+xYeIGeBracM7GpmmX+DhFxEW1JADquGboaI5xHBHrCt0+G/IYWIuiuXk4eDi9sQLXU2T00yBy8xI5QRY2m4wPIcH1EdfIXyFsQhpF4MjJ9JdMFK+d8/ioyRaq7/YE5s96zZvy8Ocmho8vbUirQlnGsrhtjerPO/13PuSHBa01aNLVujwYGvYtpC1353W01zLIeq6YdO0FDryswmFhcW/QIjrTSnwmB3eng8zOUVkScW5fWXL4TlCdrqHgeyqN73ZDmA31nI21E0eJryCekgDXVyMjJ+2oI94yDUsvH/IaOBWJsXivJemvFKNjxHypPPt1i3Z2BzImYfhHU3DVQgc7rV59VuqL9Kdq2kcORSEcoKETGwUFOnu97IBWoRpZ9nr8WHVvaPUl7xbtcD0LL08foSQ93vxHJuYmA8lXmzNc4TRVJf4lwdFyDYQyCJsZJBDbcrHd8trEyUoq6CjNo7fGcpaducjhAxP/p/PEFPCgtrYwn9x7KEnwVlI+5nUAkB+cU7KV3rufdHia52znDXDZ5cUE8tGeCmK0m5ZfBTQbBvijNIujewZNeT4NDISttYYX5MchgMcp2hQyvGa/7/P/9XiF6dzows9xRZY/Yip9kY3eSiGsjsY6ml0ciKRHxc8zC2dLD96TtkULVqoHr6/q+OblCNEkTMGl4t7Brn5tqG/mn/PQehpThA7Eqao4MNZ2DSFdLVchJaHmqgAHNRiqq2X4uFHCGIhh86pjjgYIGed8I/7PEDy5Ybo0mqEFm2kEl9G2FE5cxEWcmjzpRJo8EmDPKO3D8q1kRs9KTr+eULBZAt6Rs76YmGJopcCYTCYTp+Enk0shMmcBXFzuZxlvoaUjhwOO1ClHfN6dgIpPfUuWuiBmOXn2i4QKm4aSa+cccdJx+z75wiLWiHDn34Mmy0XkX+J4mfHWmSORTzkPQyx1wta+lHVKHRrliLpwsVOK8qX7DkUMIyJ+Vh1m7zKMxxclveiiUf5CaIMJc85QreyaKJYzP05nF8OYB613k82IzwsQrpQIhs/wzFfNlI/IAzmAwE5AXmeAMXc7UrRm8DxfXviANF5utQPcoQ41Y49mtH2YSfvcs+GgShGTV4g1Jdjm5tO2p5H27a7cPQEYUjHYabwzEi0evpAoijyz2yrac5wJECDJfxvu0w+KbUhPbXiOG61yZ7IafT5ylwaxa2VPcIbBqEZM7VYweMjDi00OXNqj7BJNBsZ5QP/xqB43cQXNOHLDHAlz3lyyzZK1jSIPY8NQ0cnbU8mEudrISVFQ+OxMPV3XL7XOKddKNtGjFVcrNbr1X4HB05zdvOL1nOcpsFuhbnD/+gR2XwHZOEtiknWoq4LN79YaHPX3M4/7J6nmz9PE1zn5ImrXpjTBwK0EF3Ok12+vDUSnnfZ3bwp2fmjZxDQ2QfzprnFL5743zrufWFOl/nmT317TY+jeoBr+jT9mKb5U29qqukvoIpISy2HNdX0q6ki+qDWNDX901QRaanlsKaafjVVRB/Umqamf5oqIi21HNZU06+miuiDWtPU9E9TRaSllsOaavrVVBF9UGuamv5pqoi01HJYU02/miqiD2pNU9M/TRWRlloOa7pH/wNvAdO2tpZouAAAAABJRU5ErkJggg=="
+        alt="logo" style="width: 150px;" id="logo" >
+
+      <br>
+      <br>
+      <p>&nbspContact Us&nbsp |&nbsp Terms Of Service &nbsp | &nbspPrivacy Policy &nbsp| &nbsp Sign Up &nbsp|&nbsp
+        Careers &nbsp|&nbspAbout Us&nbsp| &nbspFalse 9 app (android & ios) &nbsp| &nbspFalse 9 live &nbsp</p>
+<br>
+<br>
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/" target="_blank" > <img src="https://cdn-icons-png.flaticon.com/512/6033/6033714.png" width="50px" height="50px"" alt="logo"><span
+            
+        ></a>
+
+        <!-- Twitter -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.twitter.com/" target="_blank" > <img src="https://cdn3.iconfinder.com/data/icons/picons-social/57/43-twitter-512.png"  width="50px" height="50px" alt="logo"><span
+            
+          ></a>
+  
+        <!-- Google -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.google.com/" target="_blank" > <img src="https://cdn.icon-icons.com/icons2/2428/PNG/512/google_black_logo_icon_147125.png"  width="50px" height="50px" alt="logo"><span
+            
+          ></a>
+  
+
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" target="_blank" > <img src="https://cdn-icons-png.flaticon.com/512/2175/2175198.png"  width="50px" height="50px" alt="logo"><span
+            
+          ></a>
+
+        <!-- Linkedin -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/" target="_blank" > <img src="https://cdn-icons-png.flaticon.com/512/1384/1384014.png"  width="50px" height="50px" alt="logo"><span
+            
+          ></a>
+
+        <!-- Github -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.github.com/" target="_blank" > <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"  width="50px" height="50px" alt="logo"><span
+            
+          ></a>
+      </section>
+      <br>
+      
+      <!-- Section: Social media -->
+
+      <!-- Section: Form -->
+      <section class="">
+        <form action="">
+          <!--Grid row-->
+          <div class="row d-flex justify-content-center">
+            <!--Grid column-->
+            <div class="col-auto">
+              <p class="pt-2">
+                <strong>Sign Up As A Member</strong>
+              </p>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-5 col-12">
+              <!-- Email input -->
+              <div class="form-outline form-white mb-4" style="background-color: black;">
+                <input type="email" id="form5Example21" class="form-control" placeholder="Enter Your Email ID" style="color: black;" />
+                
+              </div>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-auto">
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-outline-light mb-4">
+                Subscribe
+              </button>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </form>
+      </section>
+      <!-- Section: Form -->
+
+      <!-- Section: Text -->
+      <section class="mb-4">
+        <p>
+          False 9: Your Daily Sports News Feed - Stay Updated with the Latest Action!&nbsp |&nbsp
+
+Bringing you the Best in Sports News - False 9, Your Reliable Source!&nbsp|
+
+Your Go-To Destination for Daily Sports Updates - False 9, Where Passion Meets Sports!
+        </p>
+      </section>
+      <!-- Section: Text -->
+
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2020 Copyright:
+        <a class="text-white" href="">False_9</a>
+      </div>
+      <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+  
+  
+
+  
+
+  
